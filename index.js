@@ -9,6 +9,7 @@ while(!atmFile.validatePin){
     console.log("Wrong pin, Please! try again.")
 }
 
+
 let option = prompt("Make a selection")
 switch(option){
     case '1':
