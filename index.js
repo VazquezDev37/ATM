@@ -6,7 +6,7 @@ let atmFile = require('./atm');
 console.log(atmFile);
 
 while(!validatePin){
-    alert("Wrong pin, Please! try again.")
+    console.log("Wrong pin, Please! try again.")
 }
 
 let option = prompt("Make a selection")
@@ -18,8 +18,8 @@ switch(option){
         atmFile.withDraw
         break;
     case '3':
-        deposit
+        atmFile.deposit
         break;
     default:
-        alert("Invalid, please try again.")
+        console.log("Invalid, please try again.")
 }
