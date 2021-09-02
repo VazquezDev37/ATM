@@ -9,29 +9,30 @@
 //module.exports.balance = balance
 
 let accountInfo = require('./account');
-const account = require ('prompt-sync')();
+const accountInfo = require ('prompt-sync')();
 
 
 
 function getBalance(){    
-    return account.balance;
+    return accountInfo.balance;
 }
 
 function withDraw(balance, withDraw){
     accountBal = promptUser("How much would you like to take out?");
-    account.balance = balance - withDraw;
-    return account.balance;
+    accountInfo.balance = balance - withDraw;
+    return accountInfo.balance;
 }
 
 function deposit(balance, deposit){
     accountDep = prompt("How much to deposit?");
-    account.deposit = balance + deposit
-    return account.deposit;
+    accountInfo.deposit = balance + deposit
+    return accountInfo.deposit;
 }
 
 function validatePin(){
     userPin = prompt("Enter pin number")
     if(userPin === pin){
+        if(userPin === accountInfo.pin)
         return true;
     }
 

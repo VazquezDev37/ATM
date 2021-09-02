@@ -13,12 +13,7 @@ let pin = 1983;
 
 let balance = 625;
 
-module.exports.pin = pin;
+module.exports.pin = pin
 
-module.exports.balance = balance;
+module.exports.balance = balance
 
-const {multiply} = require('./calculate');
-console.log(multiply);
-
-var result = multiply(25, 25);
-console.log(result);
