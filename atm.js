@@ -31,11 +31,10 @@ function deposit(balance, deposit){
 
 function validatePin(){
     userPin = prompt("Enter pin number")
-    if(userPin === pin){
-        if(userPin === accountInfo.pin)
+    if(userPin === accountInfo.pin){
         return true;
     }
-
+    else return false;
 }
 
 module.exports.getBalance = getBalance
