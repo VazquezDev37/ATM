@@ -9,7 +9,7 @@
 //module.exports.balance = balance
 
 let accountInfo = require('./account');
-const accountInfo = require ('prompt-sync')();
+const account = require ('prompt-sync')();
 
 
 

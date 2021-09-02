@@ -1,11 +1,11 @@
 "Use strict";
 
-console.log('Hello World!');
+const prompt = require('prompt-sync')();
 
 let atmFile = require('./atm');
 console.log(atmFile);
 
-while(!validatePin){
+while(!atmFile.validatePin){
     console.log("Wrong pin, Please! try again.")
 }
 
