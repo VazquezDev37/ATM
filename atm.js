@@ -1,37 +1,49 @@
 "Use strict";
 
-let accountInfo = require('./account');
-const account = require ('prompt-sync')();
+let {pin, balance} = require('./account');
 
 
-
-function getBalance(){    
-    return accountInfo.balance;
-}
-
-function withDraw(balance, withDraw){
-    accountBal = promptUser("How much would you like to take out?");
-    accountInfo.balance = balance - withDraw;
-    return accountInfo.balance;
-}
-
-function deposit(balance, deposit){
-    accountDep = prompt("How much to deposit?");
-    accountInfo.deposit = balance + deposit
-    return accountInfo.deposit;
-}
-
-function validatePin(){
-    userPin = prompt("Enter pin number")
-    if(userPin === accountInfo.pin){
+function validatePin(pinNumber) {
+    if (pinNumber === pin) {
         return true;
+    } else {
+        return false;
     }
-    else return false;
 }
 
-module.exports.getBalance = getBalance
-module.exports.withDraw = withDraw
-module.exports.deposit = deposit
-module.exports.validatePin = validatePin
-console.log(module);
+function getBalance() {
+    return balance;
+}
 
+
+function withdraw(amount) {
+    if(balance === 0){
+        return `You have insufficient funds.`
+    }else if (amount > balance) {
+        return `Can't withdraw`
+    } else {
+
+        let new_balance = balance - amount;
+
+        return newBalance(new_balance)
+    }
+}
+
+function newBalance(amount) {
+    balance = amount;
+    return `Your New Balance ${balance}`;
+}
+
+
+function deposit(amount) {
+    let new_balance = balance + amount;
+
+    return newBalance(new_balance);
+}
+
+module.exports = {
+    validate: validatePin,
+    balance: getBalance,
+    withdraw: withdraw,
+    deposit: deposit,
+}

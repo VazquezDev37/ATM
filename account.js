@@ -2,9 +2,11 @@
 
 let pin = 1983;
 
-let balance = 625;
+let balance = 8000;
 
-module.exports.pin = pin
 
-module.exports.balance = balance
 
+module.exports = {
+    pin: pin,
+    balance: balance
+}
