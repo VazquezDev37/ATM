@@ -42,6 +42,7 @@ function deposit(amount) {
     return newBalance(new_balance);
 }
 
+
 module.exports = {
     validate: validatePin,
     balance: getBalance,
